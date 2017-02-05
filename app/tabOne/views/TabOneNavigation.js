@@ -13,7 +13,7 @@ import { connect } from 'react-redux'
 // Icon
 import Icon from 'react-native-vector-icons/FontAwesome'
 
-const Navigator = StackNavigator(routeConfiguration,stackNavigatorConfiguration)
+const NavigatorTabOne = StackNavigator(routeConfiguration,stackNavigatorConfiguration)
 
 const mapStateToProps = (state) => {
  return {
@@ -36,7 +36,7 @@ class TabOneNavigation extends React.Component {
   render(){
     const { dispatch, navigationState} = this.props
     return (
-      <Navigator
+      <NavigatorTabOne
         navigation={
           addNavigationHelpers({
             dispatch: dispatch,

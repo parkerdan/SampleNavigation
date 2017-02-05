@@ -5,11 +5,11 @@ import findRouteIndexByName from '../helperFunctions/findRouteIndexByName'
 
 const defaultState = {
   index:0,
-  routes: routeStack
+  routes: routeStack,
 }
 const reducer = (state=defaultState,action) => {
   switch (action.type) {
-    case 'Navigate':
+    case 'Navigation/NAVIGATE':
       var index = findRouteIndexByName(routeStack,action.routeName)
       if (  index !== -1 ) {
         return { ...state, index: index }
@@ -18,14 +18,9 @@ const reducer = (state=defaultState,action) => {
       }
       break;
 
-    case 'Back':
-     if (action.key === 'TabBarBack') {
-       var currentIndex = state.index
-       return { ...state, index: currentIndex - 1 }
-     } else {
-       return state
-     }
-
+    case 'Navigation/BACK':
+     var currentIndex = state.index
+     return { ...state, index: currentIndex - 1 }
       break;
   }
   return state

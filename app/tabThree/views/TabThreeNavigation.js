@@ -6,7 +6,7 @@ import { StackNavigator, addNavigationHelpers } from 'react-navigation'
 import { routeConfiguration, stackNavigatorConfiguration } from '../navigationConfiguration'
 //Redux
 import { connect } from 'react-redux'
-const Navigator = StackNavigator(routeConfiguration,stackNavigatorConfiguration)
+const NavigatorTabThree = StackNavigator(routeConfiguration,stackNavigatorConfiguration)
 const mapStateToProps = (state) => {
  return {
   navigationState: state.tabThree
@@ -19,7 +19,7 @@ class TabThreeNavigation extends React.Component {
 render(){
     const { dispatch, navigationState} = this.props
 return (
-      <Navigator
+      <NavigatorTabThree
         navigation={addNavigationHelpers({
           dispatch: dispatch,
           state: navigationState
