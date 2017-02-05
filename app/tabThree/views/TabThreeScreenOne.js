@@ -1,6 +1,6 @@
 'use strict'
 import React from 'react'
-import { View, Text, TouchableOpacity, TouchableHighlight } from 'react-native'
+import { View, Text, TouchableOpacity } from 'react-native'
 export default class TabThreeScreenOne extends React.Component {
   render(){
     return(
@@ -10,34 +10,17 @@ export default class TabThreeScreenOne extends React.Component {
         alignItems:'center',
         justifyContent:'center'
       }}>
-        <TouchableHighlight
-          onPress={ () => console.log('hi') }
-          style={{
-          padding:30,
-          backgroundColor:'deeppink'
-        }}>
-          <Text>
-            {'TouchableHighlight'}
-          </Text>
-        </TouchableHighlight>
+        <Text>{ 'Tab Three Screen One' }</Text>
 
         <TouchableOpacity
-          onPress={
-            () => {
-              console.log('hi, new screen please')
-              // this.props.navigation.navigate('TabThreeScreenTwo')
-            }
-          }
+          onPress={ () => this.props.navigation.navigate('TabThreeScreenTwo') }
           style={{
             padding:20,
-            backgroundColor:'red',
             borderRadius:20,
-            marginBottom:50,
-            zIndex:99
+            backgroundColor:'yellow'
           }}>
-          <Text>{' Go to Screen Two '}</Text>
+          <Text>{'Go to next screen this tab'}</Text>
         </TouchableOpacity>
-        <Text>{ 'Tab Three Screen One' }</Text>
       </View>
     )
   }

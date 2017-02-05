@@ -1,6 +1,6 @@
 'use strict'
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, TouchableOpacity } from 'react-native'
 export default class TabOneScreenTwo extends React.Component {
   render(){
     return(
@@ -11,6 +11,17 @@ export default class TabOneScreenTwo extends React.Component {
         justifyContent:'center'
       }}>
         <Text>{ 'Tab One Screen Two' }</Text>
+        <TouchableOpacity
+          onPress={ () => this.props.navigation.goBack({tabIndex:0,routeIndexZero:false}) }
+          style={{
+            padding:20,
+            borderRadius:20,
+            backgroundColor:'purple',
+            marginTop:20
+          }}>
+          <Text>{'Go back a screen this tab'}</Text>
+        </TouchableOpacity>
+        
       </View>
     )
   }

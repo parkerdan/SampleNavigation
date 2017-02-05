@@ -10,15 +10,17 @@ export default class TabOneScreenOne extends React.Component {
         alignItems:'center',
         justifyContent:'center'
       }}>
+        <Text>{ 'Tab One Screen One' }</Text>
         <TouchableOpacity
-          onPress={ () => console.log('pressed!') }
+          onPress={ () => this.props.navigation.navigate('TabOneScreenTwo') }
           style={{
             padding:20,
-            backgroundColor:'yellow'
+            borderRadius:20,
+            backgroundColor:'yellow',
+            marginTop:20
           }}>
-          <Text>{ 'Hi' }</Text>
+          <Text>{'Go to next screen this tab'}</Text>
         </TouchableOpacity>
-        <Text>{ 'Tab One Screen One' }</Text>
       </View>
     )
   }

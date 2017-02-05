@@ -1,24 +1,31 @@
 'use strict'
+
 // React
 import React from 'react'
 import { BackAndroid, View } from 'react-native'
+
 // Navigation
 import { TabNavigator, addNavigationHelpers } from 'react-navigation'
 import { routeConfiguration, tabBarConfiguration } from '../navigationConfiguration'
+
 //Redux
 import { connect } from 'react-redux'
+
 const TabBar = TabNavigator(routeConfiguration,tabBarConfiguration)
+
 const mapStateToProps = (state) => {
  return {
   navigationState: state.tabBar,
-  // tabOneIndex: state.tabOne.index,
-  // tabTwoIndex: state.tabTwo.index,
-  // tabThreeIndex: state.tabThree.index,
+  tabOneIndex: state.tabOne.index,
+  tabTwoIndex: state.tabTwo.index,
+  tabThreeIndex: state.tabThree.index,
   }
 }
+
 const mapDispatchToProps = (dispatch) => {
   return { dispatch }
 }
+
 class TabBarNavigation extends React.Component {
 
   componentDidMount() {
@@ -30,18 +37,20 @@ class TabBarNavigation extends React.Component {
   }
 
   handleBackAction = () => {
-    // const { navigationState: {index: tabIndex}, tabOneIndex, tabTwoIndex, tabThreeIndex } = this.props
-    //
-    // const tabIndexArray = [ tabOneIndex, tabTwoIndex, tabThreeIndex ]
-    //
-    // if ( tabIndex === 0 && tabIndexArray[tabIndex] === 0) {
-    //   return false
-    // } else if ( tabIndexArray[tabIndex] === 0 ) {
-    //   this.navigator.props.navigation.goBack()
-    //   return true
-    // } else {
-    //   return true
-    // }
+    const { navigationState: {index: tabIndex}, tabOneIndex, tabTwoIndex, tabThreeIndex } = this.props
+
+    console.log('back action..', this.props)
+
+
+    const tabIndexArray = [ tabOneIndex, tabTwoIndex, tabThreeIndex ]
+    const routeIndexZero = (tabIndexArray[tabIndex] === 0) ? true:false
+
+    if ( tabIndex === 0 && routeIndexZero ) {
+      return false
+    } else {
+      this.navigator.props.navigation.goBack({tabIndex:tabIndex,routeIndexZero:routeIndexZero})
+      return true
+    }
   }
 
   render(){

@@ -2,9 +2,13 @@
 // Screens
 import TabThreeScreenOne from './views/TabThreeScreenOne'
 import TabThreeScreenTwo from './views/TabThreeScreenTwo'
+import TabThreeScreenThree from './views/TabThreeScreenThree'
+
 export const routeConfiguration = {
   TabThreeScreenOne: { screen: TabThreeScreenOne },
   TabThreeScreenTwo: { screen: TabThreeScreenTwo },
+  TabThreeScreenThree: { screen: TabThreeScreenThree },
+
 }
 // going to disable the header for now
 export const stackNavigatorConfiguration = {
@@ -18,5 +22,10 @@ export const routeStack = [
   {
     key: 'TabThreeScreenTwo',
     routeName: 'TabThreeScreenTwo'
+  },
+  {
+    key: 'TabThreeScreenThree',
+    routeName: 'TabThreeScreenThree'
   }
+
 ]

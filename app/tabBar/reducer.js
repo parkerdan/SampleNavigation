@@ -10,7 +10,7 @@ const defaultState = {
 const reducer = (state=defaultState,action) => {
   switch (action.type) {
     case 'Navigation/NAVIGATE':
-      var index = findRouteIndexByName(routeStack,action.routeName)
+      let index = findRouteIndexByName(routeStack,action.routeName)
       if (  index !== -1 ) {
         return { ...state, index: index }
       } else {
@@ -19,8 +19,12 @@ const reducer = (state=defaultState,action) => {
       break;
 
     case 'Navigation/BACK':
-     var currentIndex = state.index
-     return { ...state, index: currentIndex - 1 }
+      if ( action.key.routeIndexZero ) {
+        let currentIndex = state.index
+        return { ...state, index: currentIndex - 1  }
+      } else {
+        return state
+      }
       break;
   }
   return state

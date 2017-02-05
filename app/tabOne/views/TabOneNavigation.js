@@ -7,7 +7,7 @@ import React from 'react'
 import { StackNavigator, addNavigationHelpers } from 'react-navigation'
 import { routeConfiguration, stackNavigatorConfiguration } from '../navigationConfiguration'
 
-//Redux
+// Redux
 import { connect } from 'react-redux'
 
 // Icon
@@ -27,9 +27,9 @@ const mapDispatchToProps = (dispatch) => {
 
 class TabOneNavigation extends React.Component {
   static navigationOptions = {
-    tabBar: {
+    tabBar:{
       label: 'Tab One',
-      icon: ({ tintColor }) => <Icon name={'cogs'} size={20} color={ tintColor } />,
+      icon: ({ tintColor }) => <Icon size={ 20 } name={ 'cogs' } color={ tintColor }/>
     }
   }
 
