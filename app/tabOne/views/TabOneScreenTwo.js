@@ -12,7 +12,7 @@ export default class TabOneScreenTwo extends React.Component {
       }}>
         <Text>{ 'Tab One Screen Two' }</Text>
         <TouchableOpacity
-          onPress={ () => this.props.navigation.goBack({tabIndex:0,routeIndexZero:false}) }
+          onPress={ () => this.props.navigation.goBack('TabOneScreenTwo') }
           style={{
             padding:20,
             borderRadius:20,
@@ -21,7 +21,7 @@ export default class TabOneScreenTwo extends React.Component {
           }}>
           <Text>{'Go back a screen this tab'}</Text>
         </TouchableOpacity>
-        
+
       </View>
     )
   }
