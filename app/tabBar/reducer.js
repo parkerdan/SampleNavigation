@@ -18,8 +18,8 @@ const reducer = (state=defaultState,action) => {
       }
       break;
 
-    case 'Navigation/BACK':
-      if ( action.key.routeIndexZero ) {
+    case 'ANDROID_BACK_ACTION':
+      if ( action.payload.routeIndexZero ) {
         let currentIndex = state.index
         return { ...state, index: currentIndex - 1  }
       } else {

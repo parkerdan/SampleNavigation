@@ -39,8 +39,6 @@ class TabBarNavigation extends React.Component {
   handleBackAction = () => {
     const { navigationState: {index: tabIndex}, tabOneIndex, tabTwoIndex, tabThreeIndex } = this.props
 
-    console.log('back action..', this.props)
-
 
     const tabIndexArray = [ tabOneIndex, tabTwoIndex, tabThreeIndex ]
     const routeIndexZero = (tabIndexArray[tabIndex] === 0) ? true:false
@@ -48,7 +46,9 @@ class TabBarNavigation extends React.Component {
     if ( tabIndex === 0 && routeIndexZero ) {
       return false
     } else {
-      this.navigator.props.navigation.goBack({tabIndex:tabIndex,routeIndexZero:routeIndexZero})
+      this.navigator.props.navigation.dispatch(
+        {type:'ANDROID_BACK_ACTION',payload:{routeIndexZero:routeIndexZero,tabIndex:tabIndex}}
+      )
       return true
     }
   }

@@ -12,7 +12,7 @@ export default class TabThreeScreenThree extends React.Component {
       }}>
         <Text>{ 'Tab Three Screen Three' }</Text>
         <TouchableOpacity
-          onPress={ () => this.props.navigation.goBack({tabIndex:2,routeIndexZero:false}) }
+          onPress={ () => this.props.navigation.goBack('TabThreeScreenThree') }
           style={{
             padding:20,
             borderRadius:20,
