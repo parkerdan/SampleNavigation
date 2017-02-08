@@ -4,8 +4,8 @@
 import React from 'react'
 
 // Navigation
-import { StackNavigator, addNavigationHelpers } from 'react-navigation'
-import { routeConfiguration, stackNavigatorConfiguration } from '../navigationConfiguration'
+import { addNavigationHelpers } from 'react-navigation'
+import { NavigatorTabOne } from '../navigationConfiguration'
 
 // Redux
 import { connect } from 'react-redux'
@@ -13,16 +13,11 @@ import { connect } from 'react-redux'
 // Icon
 import Icon from 'react-native-vector-icons/FontAwesome'
 
-const NavigatorTabOne = StackNavigator(routeConfiguration,stackNavigatorConfiguration)
 
 const mapStateToProps = (state) => {
  return {
   navigationState: state.tabOne
   }
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return { dispatch }
 }
 
 class TabOneNavigation extends React.Component {
@@ -34,7 +29,7 @@ class TabOneNavigation extends React.Component {
   }
 
   render(){
-    const { dispatch, navigationState} = this.props
+    const { navigationState, dispatch } = this.props
     return (
       <NavigatorTabOne
         navigation={
@@ -47,4 +42,4 @@ class TabOneNavigation extends React.Component {
     )
   }
 }
-export default connect(mapStateToProps,mapDispatchToProps)(TabOneNavigation)
+export default connect(mapStateToProps)(TabOneNavigation)

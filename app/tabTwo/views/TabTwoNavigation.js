@@ -2,21 +2,17 @@
 // React
 import React from 'react'
 // Navigation
-import { StackNavigator, addNavigationHelpers } from 'react-navigation'
-import { routeConfiguration, stackNavigatorConfiguration } from '../navigationConfiguration'
+import { addNavigationHelpers } from 'react-navigation'
+import { NavigatorTabTwo } from '../navigationConfiguration'
 //Redux
 import { connect } from 'react-redux'
 // Icon
 import Icon from 'react-native-vector-icons/FontAwesome'
 
-const NavigatorTabTwo = StackNavigator(routeConfiguration,stackNavigatorConfiguration)
 const mapStateToProps = (state) => {
  return {
   navigationState: state.tabTwo
   }
-}
-const mapDispatchToProps = (dispatch) => {
-  return { dispatch }
 }
 class TabTwoNavigation extends React.Component {
   static navigationOptions = {
@@ -41,4 +37,4 @@ return (
   }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(TabTwoNavigation)
+export default connect(mapStateToProps)(TabTwoNavigation)

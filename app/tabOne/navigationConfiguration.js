@@ -1,22 +1,20 @@
 'use strict'
+
+import { StackNavigator } from 'react-navigation'
+
 // Screens
 import TabOneScreenOne from './views/TabOneScreenOne'
 import TabOneScreenTwo from './views/TabOneScreenTwo'
-export const routeConfiguration = {
+
+const routeConfiguration = {
   TabOneScreenOne: { screen: TabOneScreenOne },
   TabOneScreenTwo: { screen: TabOneScreenTwo },
 }
+
 // going to disable the header for now
-export const stackNavigatorConfiguration = {
-  headerMode: 'none'
+const stackNavigatorConfiguration = {
+  headerMode: 'none',
+  initialRoute: 'TabOneScreenOne'
 }
-export const routeStack = [
-  {
-    key: 'TabOneScreenOne',
-    routeName: 'TabOneScreenOne'
-  },
-  {
-    key: 'TabOneScreenTwo',
-    routeName: 'TabOneScreenTwo'
-  }
-]
+
+export const NavigatorTabOne = StackNavigator(routeConfiguration,stackNavigatorConfiguration)

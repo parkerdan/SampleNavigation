@@ -2,21 +2,17 @@
 // React
 import React from 'react'
 // Navigation
-import { StackNavigator, addNavigationHelpers } from 'react-navigation'
-import { routeConfiguration, stackNavigatorConfiguration } from '../navigationConfiguration'
+import { addNavigationHelpers } from 'react-navigation'
+import { NavigatorTabThree } from '../navigationConfiguration'
 //Redux
 import { connect } from 'react-redux'
 // Icon
 import Icon from 'react-native-vector-icons/FontAwesome'
 
-const NavigatorTabThree = StackNavigator(routeConfiguration,stackNavigatorConfiguration)
 const mapStateToProps = (state) => {
  return {
   navigationState: state.tabThree
   }
-}
-const mapDispatchToProps = (dispatch) => {
-  return { dispatch }
 }
 class TabThreeNavigation extends React.Component {
   static navigationOptions = {
@@ -39,4 +35,4 @@ return (
   }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(TabThreeNavigation)
+export default connect(mapStateToProps)(TabThreeNavigation)
