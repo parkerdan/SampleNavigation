@@ -21,6 +21,20 @@ export default class TabThreeScreenOne extends React.Component {
           }}>
           <Text>{'Go to next screen this tab'}</Text>
         </TouchableOpacity>
+
+        <TouchableOpacity
+          onPress={
+            () => this.props.navigation.dispatch({ type:'JUMP_TO_TAB', payload:{index:0} })
+          }
+          style={{
+            padding:20,
+            borderRadius:20,
+            backgroundColor:'deeppink',
+            marginTop:20
+          }}>
+          <Text>{'jump to tab one'}</Text>
+        </TouchableOpacity>
+
       </View>
     )
   }
