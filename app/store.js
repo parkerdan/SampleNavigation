@@ -12,7 +12,7 @@ import { TabBar, tabBarReducer } from './tabBar/navigationConfiguration'
 
 // Middleware
 const middleware = () => {
-  return applyMiddleware(logger())
+  return applyMiddleware(logger)
 }
 
 export default createStore(
