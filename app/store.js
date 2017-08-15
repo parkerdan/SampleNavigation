@@ -2,13 +2,15 @@
 
 // Redux
 import { applyMiddleware, combineReducers, createStore } from 'redux'
-import logger from 'redux-logger'
+import createLogger from 'redux-logger'
 
 // Navigation
 import { NavigatorTabOne } from './tabOne/navigationConfiguration'
 import { NavigatorTabTwo } from './tabTwo/navigationConfiguration'
 import { NavigatorTabThree } from './tabThree/navigationConfiguration'
 import { TabBar, tabBarReducer } from './tabBar/navigationConfiguration'
+
+const logger = createLogger({})
 
 // Middleware
 const middleware = () => {
