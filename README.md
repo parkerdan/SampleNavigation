@@ -1,4 +1,8 @@
 # SampleNavigation
-##  I have disabled issues. It was used as a Q & A tool.
+##  I have disabled issues.
 ##  Please post any questions about react-navigation on Stack Overflow.
-##  Please do not open issues on any repo to if you have development questions, it is bad practice.
+
+###  This is not intended as a starter repo, therefore it is not maintained and not kept up to date.
+
+
+###  I have made a react-navigation cli I use locally, if I find time in the future I will release the cli once all the features are built
